@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate')%>
+    <h1> Medicine Show</h1>
+    <h1>
+        <%= medicine.title %>
+    </h1>
+    <h2>
+        <%= medicine.description %>
+    </h2>
+    <h2>
+        <%= medicine.price %>
+    </h2>
+
+    <img src="<%= medicine.image%>" alt="...">
+    <p> <a href="/medicines/<%=medicine._id%>/edit">Edit</a> </p>
+    <form action="/medicines/<%=medicine._id%>?_method=DELETE" method="post">
+        <button> Delete</button>
+    </form>
+
+    <footer>
+        <a href="/medicines">All Medicines</a>
+    </footer>

@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate')%>
+    <h1>All Medicines</h1>
+    <div>
+        <a href="/medicines/new">Add Medicine</a>
+    </div>
+    <ul>
+        <% for(let medicine of medicines) { %>
+            <div class="card" mb-3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-fluid" alt="" src="<%=medicine.image%>">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= medicine.title %>
+                            </h5>
+                            <p class="card-text">
+                                <%= medicine.description %>
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <%= medicine.price%>
+                                </small>
+                            </p>
+                            <a class="btn btn-primary" href="/medicines/<%=medicine._id%>">View
+                                <%=medicine.title%>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </ul>
+    <% layout('layouts/boilerplate')%>
